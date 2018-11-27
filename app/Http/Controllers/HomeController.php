@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Area;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+
+        $areas = Area::get()->toTree();
+
+        return view('home', compact('areas'));
     }
 }

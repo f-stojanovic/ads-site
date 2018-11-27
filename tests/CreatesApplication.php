@@ -7,16 +7,16 @@ use Illuminate\Contracts\Console\Kernel;
 trait CreatesApplication
 {
     /**
-     * Creates the application.
+     * Creates the Application.
      *
      * @return \Illuminate\Foundation\Application
      */
     public function createApplication()
     {
-        $app = require __DIR__.'/../bootstrap/app.php';
+        $App = require __DIR__.'/../bootstrap/App.php';
 
-        $app->make(Kernel::class)->bootstrap();
+        $App->make(Kernel::class)->bootstrap();
 
-        return $app;
+        return $App;
     }
 }

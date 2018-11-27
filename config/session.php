@@ -94,7 +94,7 @@ return [
     |
     | When using the "apc" or "memcached" session drivers, you may specify a
     | cache store that should be used for these sessions. This value must
-    | correspond with one of the application's configured cache stores.
+    | correspond with one of the Application's configured cache stores.
     |
     */
 
@@ -107,7 +107,7 @@ return [
     |
     | Some session drivers must manually sweep their storage location to get
     | rid of old sessions from storage. Here are the chances that it will
-    | happen on a given request. By default, the odds are 2 out of 100.
+    | hAppen on a given request. By default, the odds are 2 out of 100.
     |
     */
 
@@ -126,7 +126,7 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+        Str::slug(env('App_NAME', 'laravel'), '_').'_session'
     ),
 
     /*
@@ -136,7 +136,7 @@ return [
     |
     | The session cookie path determines the path for which the cookie will
     | be regarded as available. Typically, this will be the root path of
-    | your application but you are free to change this when necessary.
+    | your Application but you are free to change this when necessary.
     |
     */
 
@@ -148,8 +148,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may change the domain of the cookie used to identify a session
-    | in your application. This will determine which domains the cookie is
-    | available to in your application. A sensible default has been set.
+    | in your Application. This will determine which domains the cookie is
+    | available to in your Application. A sensible default has been set.
     |
     */
 

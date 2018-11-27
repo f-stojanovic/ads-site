@@ -4,7 +4,7 @@ window._ = require('lodash');
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
+ * code may be modified to fit the specific needs of your Application.
  */
 
 try {
@@ -41,7 +41,7 @@ if (token) {
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
+ * allows your team to easily build robust real-time web Applications.
  */
 
 // import Echo from 'laravel-echo'
@@ -50,7 +50,7 @@ if (token) {
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     key: process.env.MIX_PUSHER_App_KEY,
+//     cluster: process.env.MIX_PUSHER_App_CLUSTER,
 //     encrypted: true
 // });
