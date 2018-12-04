@@ -17,7 +17,7 @@ class CreateAreasTable extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('slug')->uniqie();
+            $table->string('slug', 250)->uniqie();
 
             NestedSet::columns($table);
 
