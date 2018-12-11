@@ -2,8 +2,8 @@
 
 namespace App;
 
+use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Database\Eloquent\Model;
-use Kalnoy\Nestedset\NodeTrait; 
 
 class Area extends Model
 {

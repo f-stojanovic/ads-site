@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">  
-   <h4>{{ $category->parent->name }} &nbsp; > &nbsp; {{ $category->name }}</h4>
+    @include('listings.partials._search', [
+        'category' => $category
+    ])
 
-   @if ($listings->count())
+    <h4>{{ $category->parent->name }} &nbsp; > &nbsp; {{ $category->name }}</h4>
 
-   		@foreach ($listings as $listing)
+    <hr>
 
-   			@include ('listings.partials._listing', compact('listing'))
+    @if ($listings->count())
+        @foreach ($listings as $listing)
+            @include ('listings.partials._listing', compact('listing'))
+        @endforeach
 
-   		@endforeach
-
-   @else
-   		<p>No listings found!</p>
-   	@endif
-</div> 
+        {{ $listings->links() }}
+    @else
+        <p>No listings found.</p>
+    @endif
 @endsection
-
-

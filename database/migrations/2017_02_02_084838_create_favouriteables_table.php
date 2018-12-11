@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Kalnoy\Nestedset\Nestedset;
 
-class CreateAreasTable extends Migration
+class CreateFavouriteablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +13,14 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('favouriteables', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('slug', 250)->uniqie();
-
-            NestedSet::columns($table);
-
+            $table->integer('user_id')->unsigned();
+            $table->integer('favouriteable_id'); 
+            $table->string('favouriteable_type');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -32,6 +31,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('favouriteables');
     }
 }

@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 |
 | Here you may register all of the event broadcasting channels that your
-| Application supports. The given channel authorization callbacks are
+| application supports. The given channel authorization callbacks are
 | used to check if an authenticated user can listen to the channel.
 |
 */

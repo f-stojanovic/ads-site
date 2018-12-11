@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', App()->getLocale()) }}">
+<html lang="en">
     <head>
         @include('layouts.partials._head')
     </head>
-<body>
-    <div id="App">
-        <main class="py-4">
+    <body>
+        <div id="app">
+            @include('layouts.partials._navigation')
+            <div class="container">
+                @include('layouts.partials._alerts')
+                @yield('content')
+            </div>
+        </div>
 
-        @include('layouts.partials._navigation')
-
-        @yield('content')
-
-        </main>
-    </div>
-</body>
+        <!-- Scripts -->
+        <script src="/js/app.js"></script>
+    </body>
 </html>

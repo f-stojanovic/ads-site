@@ -16,17 +16,15 @@ class CreateListingsTable extends Migration
         Schema::create('listings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('body');
-            $table->integer('user_id')->unsinged();
-            $table->integer('area_id')->unsinged();
-            $table->integer('category_id')->unsinged();
+            $table->text('body');
+            $table->integer('user_id')->unsigned();
+            $table->integer('area_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->boolean('live')->default(false);
-            $table->softDeletes(); 
+            $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->onDelete('cascade');
-            $table->foreign('area_id')->references('id')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

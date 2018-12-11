@@ -8,12 +8,12 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * The policy mAppings for the Application.
+     * The policy mappings for the application.
      *
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Listing' => 'App\Policies\ListingPolicy',
     ];
 
     /**

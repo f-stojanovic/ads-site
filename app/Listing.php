@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Eloquent\{OrderableTrait, PivotOrderableTrait};
+use Laravel\Scout\Searchable;
 
 class Listing extends Model
 {
-    use SoftDeletes, OrderableTrait;
+    use SoftDeletes, OrderableTrait, PivotOrderableTrait, Searchable;
 
     public function scopeIsLive($query)
     {

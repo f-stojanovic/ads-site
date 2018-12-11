@@ -4,8 +4,8 @@ namespace App\Traits\Eloquent;
 
 trait OrderableTrait
 {
-	 public function scopeLatestFirst($query)
+    public function scopeLatestFirst($query)
     {
-    	return $query->orderBy('created_at', 'desc');
+        return $query->orderBy('created_at', 'desc');
     }
 }

@@ -7,27 +7,25 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any Application services.
+     * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
         \App\Area::creating(function ($area) {
-
             $prefix = $area->parent ? $area->parent->name . ' ' : '';
             $area->slug = str_slug($prefix . $area->name);
         });
 
-         \App\Category::creating(function ($category) {
-
+        \App\Category::creating(function ($category) {
             $prefix = $category->parent ? $category->parent->name . ' ' : '';
             $category->slug = str_slug($prefix . $category->name);
         });
     }
 
     /**
-     * Register any Application services.
+     * Register any application services.
      *
      * @return void
      */

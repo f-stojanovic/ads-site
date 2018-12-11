@@ -4,22 +4,35 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use App\Http\ViewComposer\AreaComposer;
+use App\Http\ViewComposers\{AreaComposer, NavigationComposer};
 
 class ComposerServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap services.
+     * Bootstrap the application services.
      *
      * @return void
      */
     public function boot()
     {
-        View::composer('*', \App\Http\ViewComposer\AreaComposer::class);
+        View::composer('*', AreaComposer::class);
+        View::composer('layouts.partials._navigation', NavigationComposer::class);
+
+        View::composer(['listings.partials.forms._categories'], function ($view) {
+            $categories = \App\Category::get()->toTree();
+
+            $view->with(compact('categories'));
+        });
+
+        View::composer(['listings.partials.forms._areas'], function ($view) {
+            $areas = \App\Area::get()->toTree();
+
+            $view->with(compact('areas'));
+        });
     }
 
     /**
-     * Register services.
+     * Register the application services.
      *
      * @return void
      */
